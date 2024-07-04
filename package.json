@@ -10,6 +10,10 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "ts-node": "^10.9.2",
     "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "@zxing/library": "^0.21.2"
   }
 }
