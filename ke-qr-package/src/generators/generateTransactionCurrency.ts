@@ -1,6 +1,6 @@
 import assert from "node:assert";
-import { TransactionCurrency } from "../../types";
-import { formatDataObjectValue } from "../../utils/formatDataObjectValues";
+import { TransactionCurrency } from "../types";
+import { formatDataObjectValue } from "../utils/formatDataObjectValues";
 
 /**
  * Generates a transaction currency entry.

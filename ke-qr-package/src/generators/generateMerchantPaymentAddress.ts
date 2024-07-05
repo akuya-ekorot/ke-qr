@@ -1,6 +1,6 @@
 import assert from "node:assert";
-import { formatDataObjectValue } from "../../utils/formatDataObjectValues";
-import { DataObject } from "../../types";
+import { DataObject } from "../types";
+import { formatDataObjectValue } from "../utils/formatDataObjectValues";
 
 /**
  * Generates a merchant account information entry.

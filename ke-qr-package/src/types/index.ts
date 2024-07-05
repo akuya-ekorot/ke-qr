@@ -14,6 +14,7 @@ export type PayloadFormatIndicator = DataObject<"00">;
 export type PointOfInitiationMethod = DataObject<"01">;
 export type TransactionCurrency = DataObject<"53">;
 export type TransactionAmount = DataObject<"54">;
+export type MerchantName = DataObject<"59">;
 
 /* ENUMS */
 export enum QRCodeType {
