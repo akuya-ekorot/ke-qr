@@ -1,17 +1,22 @@
-export function calculateCRC(payload: string): string {
-  const polynomial = 0x1021;
-  let crc = 0xffff;
+import crc from "crc";
 
-  for (let i = 0; i < payload.length; i++) {
-    crc ^= payload.charCodeAt(i) << 8;
+export function calculateAndFormatCRC(data: string): string {
+  // Calculate CRC-16 checksum
+  const crcValue = crc
+    .crc16ccitt(data, 0xffff)
+    .toString(16)
+    .toUpperCase()
+    .padStart(4, "0");
 
-    for (let j = 0; j < 8; j++) {
-      if ((crc & 0x8000) !== 0) {
-        crc = (crc << 1) ^ polynomial;
-      } else {
-        crc = crc << 1;
-      }
-    }
-  }
-  return (crc & 0xffff).toString(16).toUpperCase().padStart(4, "0");
+  // Convert each nibble to corresponding Alphanumeric Special character
+  const formattedCRC = crcValue
+    .split("")
+    .map((char) => {
+      const code = char.charCodeAt(0);
+      return String.fromCharCode(code >= 65 ? code : code + 48);
+    })
+    .join("");
+
+  // Return the formatted CRC with its ID and Length
+  return `6304${formattedCRC}`;
 }

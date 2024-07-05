@@ -1,6 +1,6 @@
 export type DataObject<T extends string = string> = {
   id: T;
-  length: T extends "00" | "01" ? "02" : string;
+  length: T extends "00" | "01" ? "02" : T extends "63" ? "04" : string;
   value: T extends "00"
     ? "01"
     : T extends "01"
@@ -15,6 +15,7 @@ export type PointOfInitiationMethod = DataObject<"01">;
 export type TransactionCurrency = DataObject<"53">;
 export type TransactionAmount = DataObject<"54">;
 export type MerchantName = DataObject<"59">;
+export type CRC = DataObject<"63">;
 
 /* ENUMS */
 export enum QRCodeType {

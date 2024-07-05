@@ -7,9 +7,12 @@
     "test": "ts-node src/qr_test.ts",
     "build": "tsc -p ."
   },
-  "dependencies": {},
+  "dependencies": {
+    "crc": "^4.3.2"
+  },
   "devDependencies": {
-    "typescript": "^5.5.0",
-    "ts-node": "^10.4.0"
+    "@types/crc": "^3.8.3",
+    "ts-node": "^10.4.0",
+    "typescript": "^5.5.0"
   }
 }
